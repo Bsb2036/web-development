@@ -1,9 +1,16 @@
 :root {
     color-scheme: light;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    color: #382353;
-    background: #fff4fb;
+    font-family: "DM Sans", Arial, sans-serif;
+    color: #493421;
+    background: #d8b687;
     font-synthesis: none;
+    --cardboard: #c99b68;
+    --cardboard-light: #e6c99e;
+    --bubble: #e7f8fc;
+    --bubble-blue: #a9deeb;
+    --espresso: #493421;
+    --muted: #705b45;
+    --blue: #277f98;
 }
 
 * {
@@ -16,17 +23,15 @@ body {
     margin: 0;
     overflow-wrap: anywhere;
     background:
-        radial-gradient(circle at 12% 18%, #fff 0 3px, transparent 4px),
-        radial-gradient(circle at 88% 32%, #fff 0 4px, transparent 5px),
-        radial-gradient(circle at 72% 82%, #fff 0 3px, transparent 4px),
-        linear-gradient(135deg, #ffe2f2, #e9e3ff 55%, #fff5c9);
-    background-size: 130px 130px, 170px 170px, 210px 210px, auto;
+        repeating-linear-gradient(3deg, transparent 0 7px, #8b60301a 8px 9px, transparent 10px 17px),
+        linear-gradient(135deg, var(--cardboard-light), var(--cardboard) 58%, #b98754);
+    background-size: 100% 18px, auto;
 }
 
 .site-header,
 .page-shell,
 .site-footer {
-    width: min(1100px, calc(100% - 40px));
+    width: min(1104px, calc(100% - 48px));
     margin-inline: auto;
 }
 
@@ -34,23 +39,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 24px;
     padding: 24px 0 16px;
 }
 
 .brand {
-    color: #7a35ba;
-    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
-    font-weight: 800;
+    color: #176a80;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 700;
     text-decoration: none;
-    text-shadow: 2px 2px 0 #fff, 0 0 14px #ffb5df;
+    text-shadow: 2px 2px 0 var(--bubble), 0 0 16px var(--bubble);
 }
 
 nav ul {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -58,30 +63,32 @@ nav ul {
 
 nav a {
     display: inline-block;
-    padding: 9px 14px;
-    border: 2px solid #fff;
-    border-radius: 999px;
-    background: #ffffffb8;
-    color: #60328b;
+    padding: 8px 16px;
+    border: 2px solid var(--bubble);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle, #ffffffcc 0 4px, transparent 5px) 0 0 / 16px 16px,
+        #e7f8fce8;
+    color: var(--espresso);
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 3px 10px #7a35ba22;
+    box-shadow: 0 4px 8px #49342133;
 }
 
 nav a:hover,
 nav a:focus-visible {
-    background: #fff;
+    background: var(--bubble);
     transform: translateY(-2px);
 }
 
 .page-shell {
-    padding-block: 18px 34px;
+    padding-block: 16px 32px;
 }
 
 .page-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 24px;
     align-items: stretch;
 }
 
@@ -89,11 +96,13 @@ nav a:focus-visible {
 .projects-grid article {
     min-width: 0;
     margin: 0;
-    padding: clamp(20px, 3vw, 32px);
-    border: 2px solid #fff;
-    border-radius: 22px;
-    background: #ffffffdf;
-    box-shadow: 0 8px 24px #874eb326;
+    padding: clamp(24px, 3vw, 32px);
+    border: 2px solid var(--cardboard);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle, #ffffffb8 0 4px, #a9deeb33 5px, transparent 7px) 0 0 / 24px 24px,
+        #e7f8fceF;
+    box-shadow: 0 8px 24px #49342133;
 }
 
 .content-card {
@@ -103,11 +112,11 @@ nav a:focus-visible {
 .content-card::after,
 .projects-grid article::after {
     position: absolute;
-    top: 12px;
-    right: 18px;
-    color: #f0ae16;
+    top: 16px;
+    right: 16px;
+    color: var(--blue);
     content: "\2726";
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .projects-grid article {
@@ -119,8 +128,8 @@ nav a:focus-visible {
     width: 100%;
     height: auto;
     margin: 16px 0;
-    border: 2px solid #e9e0d3;
-    border-radius: 12px;
+    border: 2px solid var(--cardboard-light);
+    border-radius: 16px;
 }
 
 .wide-card {
@@ -129,35 +138,33 @@ nav a:focus-visible {
 
 .eyebrow {
     margin-top: 0;
-    color: #7a35ba;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    color: #176a80;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    color: #60328b;
-    line-height: 1.2;
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--espresso);
+    line-height: 1.25;
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(32px, 5vw, 56px);
 }
 
-h2 {
-    color: #a33ca7;
-}
-
+h2,
 h3 {
-    color: #5b55bc;
+    color: #176a80;
 }
 
 h4 {
     margin-top: 0;
-    font-size: 1.25rem;
+    font-size: 20px;
 }
 
 p {
@@ -174,7 +181,7 @@ p {
 
 .hero-card h1 {
     max-width: 15ch;
-    margin: 0 0 12px;
+    margin: 0 0 16px;
 }
 
 .hero-card p:not(.eyebrow) {
@@ -184,12 +191,12 @@ p {
 .action-link {
     display: inline-block;
     max-width: 100%;
-    margin-top: 12px;
-    padding: 11px 17px;
-    border: 2px solid #fff;
-    border-radius: 999px;
-    background: #7a35ba;
-    color: #fff;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: 2px solid var(--bubble);
+    border-radius: 24px;
+    background: var(--blue);
+    color: var(--bubble);
     font-weight: 700;
     text-decoration: none;
     overflow-wrap: anywhere;
@@ -197,7 +204,7 @@ p {
 
 .action-link:hover,
 .action-link:focus-visible {
-    background: #5b278c;
+    background: #176a80;
 }
 
 .highlight-card {
@@ -211,20 +218,16 @@ p {
 }
 
 .site-footer {
-    padding: 16px 0 30px;
-    color: #684f7d;
+    padding: 16px 0 32px;
+    color: var(--muted);
     text-align: center;
-}
-
-.feedback-card::after {
-    color: #f0ae16;
 }
 
 @media (max-width: 700px) {
     .site-header {
         flex-direction: column;
         align-items: stretch;
-        gap: 12px;
+        gap: 16px;
         text-align: center;
     }
 
@@ -250,20 +253,20 @@ p {
     .site-header,
     .page-shell,
     .site-footer {
-        width: calc(100% - 24px);
+        width: calc(100% - 32px);
     }
 
     nav ul {
-        gap: 7px;
+        gap: 8px;
     }
 
     nav a {
-        padding: 8px 10px;
-        font-size: 0.9rem;
+        padding: 8px;
+        font-size: 14px;
     }
 
     .content-card,
     .projects-grid article {
-        padding: 18px;
+        padding: 16px;
     }
 }
