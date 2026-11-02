@@ -146,8 +146,7 @@ nav a:focus-visible {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
     font-family: "Playfair Display", Georgia, serif;
     color: var(--espresso);
     line-height: 1.25;
@@ -162,7 +161,7 @@ h3 {
     color: #176a80;
 }
 
-h4 {
+.projects-grid article h2 {
     margin-top: 0;
     font-size: 20px;
 }
