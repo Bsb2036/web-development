@@ -85,6 +85,14 @@ h1 span {
     align-items: stretch;
 }
 
+.party-heading {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #273d28;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 .monkey-card {
     min-width: 0;
     padding: 16px 16px 18px;
