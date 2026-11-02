@@ -137,8 +137,7 @@ nav a:focus-visible {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
     color: #60328b;
     line-height: 1.2;
 }
@@ -155,7 +154,7 @@ h3 {
     color: #5b55bc;
 }
 
-h4 {
+.projects-grid article h2 {
     margin-top: 0;
     font-size: 1.25rem;
 }
