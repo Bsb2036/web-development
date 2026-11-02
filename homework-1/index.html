@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f0dc">
+    <title>Monkey Business | Peace, Please!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <header class="page-header">
+            <p class="eyebrow">A LITTLE WILD, A LOT OF PEACE</p>
+            <h1>Monkey <span>Business</span></h1>
+            <p class="intro">Meet the whole crew: different monkeys, peace signs, and shiny signed necklaces. Drag them around to rearrange the party!</p>
+            <p class="move-hint">Grab a monkey to move it, or focus one and use your arrow keys.</p>
+        </header>
+
+        <section class="monkey-party" aria-label="A collection of monkeys">
+            <article class="monkey-card" draggable="true" tabindex="0" aria-label="Chimpanzee monkey. Use arrow keys to move.">
+                <div class="monkey-scene chimp">
+                    <span class="monkey-body" aria-hidden="true"></span>
+                    <span class="monkey-icon" aria-hidden="true">🐵</span>
+                    <span class="peace-sign" aria-hidden="true">✌️</span>
+                    <span class="necklace" aria-hidden="true"><span>M</span></span>
+                </div>
+                <h2>Chimpanzee</h2>
+                <p>Peaceful and playful</p>
+                <span class="card-tag">SIGNED WITH LOVE</span>
+            </article>
+
+            <article class="monkey-card" draggable="true" tabindex="0" aria-label="Gorilla monkey. Use arrow keys to move.">
+                <div class="monkey-scene gorilla">
+                    <span class="monkey-body" aria-hidden="true"></span>
+                    <span class="monkey-icon" aria-hidden="true">🦍</span>
+                    <span class="peace-sign" aria-hidden="true">✌️</span>
+                    <span class="necklace" aria-hidden="true"><span>M</span></span>
+                </div>
+                <h2>Gorilla</h2>
+                <p>Big heart, gentle vibes</p>
+                <span class="card-tag">SIGNED WITH LOVE</span>
+            </article>
+
+            <article class="monkey-card" draggable="true" tabindex="0" aria-label="Orangutan monkey. Use arrow keys to move.">
+                <div class="monkey-scene orangutan">
+                    <span class="monkey-body" aria-hidden="true"></span>
+                    <span class="monkey-icon" aria-hidden="true">🦧</span>
+                    <span class="peace-sign" aria-hidden="true">✌️</span>
+                    <span class="necklace" aria-hidden="true"><span>M</span></span>
+                </div>
+                <h2>Orangutan</h2>
+                <p>Orange fur, golden style</p>
+                <span class="card-tag">SIGNED WITH LOVE</span>
+            </article>
+
+            <article class="monkey-card" draggable="true" tabindex="0" aria-label="Macaque monkey. Use arrow keys to move.">
+                <div class="monkey-scene macaque">
+                    <span class="monkey-body" aria-hidden="true"></span>
+                    <span class="monkey-icon" aria-hidden="true">🐒</span>
+                    <span class="peace-sign" aria-hidden="true">✌️</span>
+                    <span class="necklace" aria-hidden="true"><span>M</span></span>
+                </div>
+                <h2>Macaque</h2>
+                <p>Small monkey, big hello</p>
+                <span class="card-tag">SIGNED WITH LOVE</span>
+            </article>
+
+            <article class="monkey-card" draggable="true" tabindex="0" aria-label="Mandrill monkey. Use arrow keys to move.">
+                <div class="monkey-scene mandrill">
+                    <span class="monkey-body" aria-hidden="true"></span>
+                    <span class="monkey-icon" aria-hidden="true">🙈</span>
+                    <span class="peace-sign" aria-hidden="true">✌️</span>
+                    <span class="necklace" aria-hidden="true"><span>M</span></span>
+                </div>
+                <h2>Mandrill</h2>
+                <p>Colorful face, cool friend</p>
+                <span class="card-tag">SIGNED WITH LOVE</span>
+            </article>
+
+            <article class="monkey-card" draggable="true" tabindex="0" aria-label="Capuchin monkey. Use arrow keys to move.">
+                <div class="monkey-scene capuchin">
+                    <span class="monkey-body" aria-hidden="true"></span>
+                    <span class="monkey-icon" aria-hidden="true">🙉</span>
+                    <span class="peace-sign" aria-hidden="true">✌️</span>
+                    <span class="necklace" aria-hidden="true"><span>M</span></span>
+                </div>
+                <h2>Capuchin</h2>
+                <p>Curious, clever, and kind</p>
+                <span class="card-tag">SIGNED WITH LOVE</span>
+            </article>
+        </section>
+
+        <p class="party-footer" aria-live="polite">Six friends. One golden rule: be kind. 🌿</p>
+    </main>
+
+    <script>
+        const party = document.querySelector(".monkey-party");
+        let draggedCard = null;
+
+        party.addEventListener("dragstart", (event) => {
+            const card = event.target.closest(".monkey-card");
+            if (!card) return;
+
+            draggedCard = card;
+            card.classList.add("is-dragging");
+            event.dataTransfer.effectAllowed = "move";
+            event.dataTransfer.setData("text/plain", card.querySelector("h2").textContent);
+        });
+
+        party.addEventListener("dragover", (event) => {
+            const target = event.target.closest(".monkey-card");
+            if (!draggedCard || !target || target === draggedCard) return;
+
+            event.preventDefault();
+            const bounds = target.getBoundingClientRect();
+            const insertBefore = event.clientY < bounds.top + bounds.height / 2;
+            party.insertBefore(draggedCard, insertBefore ? target : target.nextElementSibling);
+        });
+
+        party.addEventListener("dragend", () => {
+            if (draggedCard) draggedCard.classList.remove("is-dragging");
+            draggedCard = null;
+        });
+
+        party.addEventListener("keydown", (event) => {
+            if (!["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"].includes(event.key)) return;
+
+            const card = event.target.closest(".monkey-card");
+            if (!card) return;
+
+            const cards = [...party.querySelectorAll(".monkey-card")];
+            const index = cards.indexOf(card);
+            const movingForward = event.key === "ArrowRight" || event.key === "ArrowDown";
+            const destination = movingForward ? cards[index + 1] : cards[index - 1];
+            if (!destination) return;
+
+            event.preventDefault();
+            party.insertBefore(card, movingForward ? destination.nextElementSibling : destination);
+            card.focus();
+            document.querySelector(".party-footer").textContent = `${card.querySelector("h2").textContent} moved. Nice and easy!`;
+        });
+    </script>
+</body>
+</html>
