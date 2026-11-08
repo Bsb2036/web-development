@@ -8,140 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Home | Professional Portfolio</title>
-    <style>
-        :root {
-            --blue: #4f46e5;
-            --bg: #f3f5fa;
-            --card-bg: #ffffff;
-            --text: #1f2937;
-            --muted: #4b5563;
-            --soft: #eef2ff;
-            --shadow: rgba(31, 41, 55, 0.08);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "DM Sans", Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .page-shell {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem 4rem;
-        }
-
-        .page-grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .content-card {
-            border: 1px solid rgba(79, 70, 229, 0.12);
-            border-radius: 20px;
-            background: var(--card-bg);
-            box-shadow: 0 12px 30px var(--shadow);
-        }
-
-        #home-hero {
-            border-color: var(--blue);
-        }
-
-        .hero-card {
-            display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
-            align-items: center;
-            gap: 2rem;
-            padding: clamp(1.5rem, 5vw, 3rem);
-            background: linear-gradient(135deg, #fff 0%, var(--soft) 100%);
-        }
-
-        .hero-copy {
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-
-        .eyebrow,
-        .hero-card h1,
-        .hero-description {
-            margin: 0;
-        }
-
-        .eyebrow {
-            color: var(--blue);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-        }
-
-        .hero-card h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 1.1;
-            font-family: "Playfair Display", Georgia, serif;
-        }
-
-        .hero-description {
-            max-width: 65ch;
-            color: var(--muted);
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        .hero-action {
-            display: flex;
-        }
-
-        .action-link {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            width: 100%;
-            padding: 1.1rem 1.25rem;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            background: #fff;
-            color: inherit;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 180ms ease, box-shadow 180ms ease;
-        }
-
-        .action-link:hover,
-        .action-link:focus-visible {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-        }
-
-        .action-link:focus-visible {
-            outline: 3px solid rgba(79, 70, 229, 0.4);
-            outline-offset: 3px;
-        }
-
-        .action-title {
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        .action-description {
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-
-        @media (max-width: 650px) {
-            .hero-card {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -162,16 +28,15 @@
                 <div class="hero-copy">
                     <p class="eyebrow">WELCOME</p>
                     <h1>Welcome to Brian's Portfolio</h1>
-                    <p class="hero-description">
+                    <p>
                         This is the central hub showcasing my technical work, skills, and background.
                         Explore the links above to see my featured projects or get in touch.
                     </p>
                 </div>
-
                 <div class="hero-action">
                     <a class="action-link" href="projects.html">
-                        <span class="action-title">Explore my work <span aria-hidden="true">&rarr;</span></span>
-                        <span class="action-description">Opens the Projects page</span>
+                        <span>Explore my work <span aria-hidden="true">&rarr;</span></span>
+                        <span>Opens the Projects page</span>
                     </a>
                 </div>
             </section>
