@@ -43,7 +43,7 @@ body {
 }
 
 .brand {
-    color: #176a80;
+    color: var(--muted);
     font-size: clamp(18px, 2.5vw, 24px);
     font-weight: 700;
     text-decoration: none;
