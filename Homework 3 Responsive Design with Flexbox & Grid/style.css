@@ -9,7 +9,7 @@
     --bubble: #e7f8fc;
     --bubble-blue: #a9deeb;
     --espresso: #493421;
-    --muted: #705b45;
+    --muted: #21170d;
     --blue: #277f98;
 }
 
@@ -194,7 +194,7 @@ p {
     padding: 8px 16px;
     border: 2px solid var(--bubble);
     border-radius: 24px;
-    background: var(--blue);
+    background: #176a80;
     color: var(--bubble);
     font-weight: 700;
     text-decoration: none;
