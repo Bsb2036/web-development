@@ -31,6 +31,28 @@ body {
     text-align: center;
 }
 
+.home-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    border: 2px solid #273d28;
+    border-radius: 999px;
+    background: #273d28;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home-link:hover,
+.home-link:focus-visible {
+    background: #1b2b1c;
+}
+
+.home-link:focus-visible {
+    outline: 3px solid #b77827;
+    outline-offset: 3px;
+}
+
 .eyebrow {
     margin: 0 0 12px;
     color: #557240;
