@@ -1,8 +1,13 @@
 :root {
     color-scheme: light;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    color: #293723;
-    background: #f5f0dc;
+    font-family: "DM Sans", Arial, sans-serif;
+    color: #493421;
+    background: #d8b687;
+    --cardboard: #c99b68;
+    --cardboard-light: #e6c99e;
+    --bubble: #e7f8fc;
+    --espresso: #493421;
+    --blue: #176a80;
 }
 
 * {
@@ -15,9 +20,9 @@ body {
     margin: 0;
     padding: 48px 20px;
     background:
-        radial-gradient(ellipse at 12% 8%, rgba(181, 207, 123, 0.3), transparent 32%),
-        radial-gradient(ellipse at 91% 87%, rgba(228, 185, 91, 0.2), transparent 30%),
-        #f5f0dc;
+        repeating-linear-gradient(3deg, transparent 0 7px, #8b60301a 8px 9px, transparent 10px 17px),
+        linear-gradient(135deg, var(--cardboard-light), var(--cardboard) 58%, #b98754);
+    background-size: 100% 18px, auto;
 }
 
 .page {
@@ -28,34 +33,56 @@ body {
 .page-header {
     max-width: 720px;
     margin: 0 auto 34px;
+    padding: 24px;
+    border: 2px solid var(--cardboard);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle, #ffffffb8 0 4px, #a9deeb33 5px, transparent 7px) 0 0 / 24px 24px,
+        #e7f8fcef;
+    box-shadow: 0 8px 24px #49342133;
     text-align: center;
 }
 
-.home-link {
-    display: inline-block;
+.page-header h1,
+.party-heading,
+.monkey-card h2 {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
+}
+
+.portfolio-nav a {
+    display: inline-block;
     padding: 10px 18px;
-    border: 2px solid #273d28;
+    border: 2px solid var(--cardboard);
     border-radius: 999px;
-    background: #273d28;
-    color: #fff;
+    background:
+        radial-gradient(circle, #ffffffcc 0 4px, transparent 5px) 0 0 / 16px 16px,
+        #e7f8fce8;
+    color: var(--espresso);
     font-weight: 700;
     text-decoration: none;
 }
 
-.home-link:hover,
-.home-link:focus-visible {
-    background: #1b2b1c;
+.portfolio-nav a:hover,
+.portfolio-nav a:focus-visible {
+    background: var(--bubble);
 }
 
-.home-link:focus-visible {
-    outline: 3px solid #b77827;
+.portfolio-nav a:focus-visible {
+    outline: 3px solid var(--blue);
     outline-offset: 3px;
 }
 
 .eyebrow {
     margin: 0 0 12px;
-    color: #557240;
+    color: var(--blue);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.19em;
@@ -63,20 +90,20 @@ body {
 
 h1 {
     margin: 0;
-    color: #273d28;
+    color: var(--espresso);
     font-size: clamp(2.7rem, 8vw, 5rem);
     letter-spacing: -0.07em;
     line-height: 1;
 }
 
 h1 span {
-    color: #b77827;
+    color: var(--blue);
 }
 
 .intro {
     max-width: 580px;
     margin: 18px auto 10px;
-    color: #59614d;
+    color: #382716;
     font-size: 1.05rem;
     line-height: 1.65;
 }
@@ -85,10 +112,10 @@ h1 span {
     display: inline-block;
     margin: 5px 0 0;
     padding: 8px 14px;
-    border: 1px solid #d5dcc4;
+    border: 1px solid var(--cardboard);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.64);
-    color: #526647;
+    background: var(--bubble);
+    color: var(--espresso);
     font-size: 0.88rem;
 }
 
@@ -114,7 +141,7 @@ h1 span {
 .party-heading {
     grid-column: 1 / -1;
     margin: 0;
-    color: #273d28;
+    color: #21170d;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -123,10 +150,12 @@ h1 span {
     min-width: 0;
     padding: 16px 16px 18px;
     overflow: hidden;
-    border: 2px solid rgba(89, 113, 64, 0.13);
+    border: 2px solid var(--cardboard);
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 22px rgba(57, 69, 41, 0.08);
+    background:
+        radial-gradient(circle, #ffffffb8 0 4px, #a9deeb33 5px, transparent 7px) 0 0 / 24px 24px,
+        #e7f8fcef;
+    box-shadow: 0 8px 24px #49342133;
     cursor: grab;
     text-align: center;
     touch-action: manipulation;
@@ -137,13 +166,13 @@ h1 span {
 .monkey-card:focus-visible {
     z-index: 1;
     transform: translateY(-4px);
-    border-color: #9baa70;
-    box-shadow: 0 14px 28px rgba(57, 69, 41, 0.14);
+    border-color: var(--blue);
+    box-shadow: 0 14px 28px #49342144;
     outline: none;
 }
 
 .monkey-card:focus-visible {
-    outline: 3px solid #b77827;
+    outline: 3px solid var(--blue);
     outline-offset: 3px;
 }
 
@@ -252,20 +281,20 @@ h1 span {
 
 .monkey-card h2 {
     margin: 15px 0 4px;
-    color: #33492f;
+    color: var(--blue);
     font-size: 1.25rem;
 }
 
 .monkey-card > p {
     margin: 0;
-    color: #707568;
+    color: #382716;
     font-size: 0.9rem;
 }
 
 .card-tag {
     display: inline-block;
     margin-top: 12px;
-    color: #a16c20;
+    color: #12566a;
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 0.15em;
@@ -310,7 +339,7 @@ h1 span {
 
 .party-footer {
     margin: 28px 0 0;
-    color: #64724f;
+    color: #21170d;
     font-size: 0.95rem;
     text-align: center;
 }
