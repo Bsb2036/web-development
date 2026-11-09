@@ -217,6 +217,95 @@ p {
     background: var(--blue);
 }
 
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form fieldset {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+    border: 2px solid var(--cardboard-light);
+    border-radius: 16px;
+}
+
+.contact-form legend {
+    padding-inline: 8px;
+    color: var(--espresso);
+    font-weight: 700;
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+}
+
+.form-field label {
+    color: var(--espresso);
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 2px solid var(--cardboard);
+    border-radius: 10px;
+    background: var(--bubble);
+    color: var(--espresso);
+    font: inherit;
+}
+
+.form-field textarea {
+    min-height: 132px;
+    resize: vertical;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible,
+.form-submit:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+    border-color: #8f1d14;
+}
+
+.field-hint,
+.field-error {
+    line-height: 1.45;
+}
+
+.field-hint {
+    color: var(--body-text);
+}
+
+.field-error,
+.form-error-summary {
+    color: #8f1d14;
+    font-weight: 700;
+}
+
+.form-error-summary {
+    margin: 0 0 16px;
+}
+
+.form-submit {
+    margin-top: 16px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.form-status {
+    min-height: 1.65em;
+    margin-bottom: 0;
+}
+
 .highlight-card {
     display: flex;
     flex-direction: column;
