@@ -1,16 +1,27 @@
 :root {
     color-scheme: light;
     font-family: "DM Sans", Arial, sans-serif;
-    color: #493421;
-    background: #d8b687;
+    color: var(--espresso);
+    background: var(--page-base);
     font-synthesis: none;
+    --page-base: #d8b687;
     --cardboard: #c99b68;
     --cardboard-light: #e6c99e;
+    --cardboard-dark: #b98754;
+    --cardboard-grain: #8b60301a;
     --bubble: #e7f8fc;
     --bubble-blue: #a9deeb;
     --espresso: #493421;
+    --body-text: #382716;
     --muted: #21170d;
     --blue: #176a80;
+    --blue-dark: #12566a;
+    --focus: #21170d;
+    --gold-light: #fff7db;
+    --gold: #ffdb67;
+    --gold-dark: #d99523;
+    --gold-border: #ffe17a;
+    --gold-line: #edbd43;
 }
 
 * {
@@ -23,8 +34,8 @@ body {
     margin: 0;
     overflow-wrap: anywhere;
     background:
-        repeating-linear-gradient(3deg, transparent 0 7px, #8b60301a 8px 9px, transparent 10px 17px),
-        linear-gradient(135deg, var(--cardboard-light), var(--cardboard) 58%, #b98754);
+        repeating-linear-gradient(3deg, transparent 0 7px, var(--cardboard-grain) 8px 9px, transparent 10px 17px),
+        linear-gradient(135deg, var(--cardboard-light), var(--cardboard) 58%, var(--cardboard-dark));
     background-size: 100% 18px, auto;
 }
 
@@ -101,7 +112,7 @@ nav a:focus-visible {
     border-radius: 24px;
     background:
         radial-gradient(circle, #ffffffb8 0 4px, #a9deeb33 5px, transparent 7px) 0 0 / 24px 24px,
-        #e7f8fceF;
+        var(--bubble);
     box-shadow: 0 8px 24px #49342133;
 }
 
@@ -138,7 +149,7 @@ nav a:focus-visible {
 
 .eyebrow {
     margin-top: 0;
-    color: #176a80;
+    color: var(--blue);
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -158,7 +169,7 @@ h1 {
 
 h2,
 h3 {
-    color: #176a80;
+    color: var(--blue);
 }
 
 .projects-grid article h2 {
@@ -194,7 +205,7 @@ p {
     padding: 8px 16px;
     border: 2px solid var(--bubble);
     border-radius: 24px;
-    background: #176a80;
+    background: var(--blue);
     color: var(--bubble);
     font-weight: 700;
     text-decoration: none;
@@ -203,7 +214,7 @@ p {
 
 .action-link:hover,
 .action-link:focus-visible {
-    background: #176a80;
+    background: var(--blue);
 }
 
 .highlight-card {
