@@ -198,6 +198,29 @@ p {
     max-width: 60ch;
 }
 
+.song-player {
+    width: min(100%, 360px);
+    margin-top: 16px;
+}
+
+.song-title {
+    margin-bottom: 8px;
+    color: var(--espresso);
+    font-weight: 700;
+}
+
+.song-player audio {
+    display: block;
+    width: 100%;
+}
+
+.song-status {
+    min-height: 1.65em;
+    margin: 8px 0 0;
+    color: var(--body-text);
+    font-size: 14px;
+}
+
 .action-link {
     display: inline-block;
     max-width: 100%;

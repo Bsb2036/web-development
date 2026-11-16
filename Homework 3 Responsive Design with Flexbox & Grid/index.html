@@ -28,6 +28,14 @@
                 <p class="eyebrow">WELCOME</p>
                 <h1>Welcome to Brian's Portfolio</h1>
                 <p>This is the central hub showcasing my technical work, skills, and background. Explore the links above to see my featured projects or get in touch.</p>
+                <div class="song-player">
+                    <p class="song-title">A little teapot</p>
+                    <audio id="teapot-song" controls autoplay preload="auto" aria-label="I'm a Little Teapot">
+                        <source src="im-a-little-teapot.mp3" type="audio/mpeg">
+                        Your browser does not support audio playback.
+                    </audio>
+                    <p class="song-status" id="song-status" role="status" aria-live="polite"></p>
+                </div>
             </section>
 
             <section class="content-card highlight-card">
@@ -43,5 +51,6 @@
         <p>&copy; 2026 Brian's Project. Made with Stuborness and Caffeine.</p>
     </footer>
 
+    <script src="main-page-audio.js" defer></script>
 </body>
 </html>
