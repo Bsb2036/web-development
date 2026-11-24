@@ -30,42 +30,52 @@
             <p>Browse my web development work in order, from my first HTML page through the portfolio assignments and interactive gallery.</p>
         </section>
 
-            <article>
+        <section class="project-filters wide-card" aria-label="Filter projects">
+            <div class="filter-buttons" role="group" aria-label="Project categories">
+                <button type="button" class="filter-button" data-project-filter="all" aria-pressed="true">All projects</button>
+                <button type="button" class="filter-button" data-project-filter="coursework" aria-pressed="false">Coursework</button>
+                <button type="button" class="filter-button" data-project-filter="interactive" aria-pressed="false">Interactive</button>
+                <button type="button" class="filter-button" data-project-filter="additional" aria-pressed="false">Additional</button>
+            </div>
+            <p class="filter-status" data-filter-status role="status" aria-live="polite" aria-atomic="true"></p>
+        </section>
+
+            <article data-project-category="coursework">
                 <p class="eyebrow">FIRST WEB PAGE</p>
                 <h2>Hello, World!</h2>
                 <p>My earliest HTML page, with a short introduction, a list, and a monkey photo.</p>
                 <a class="action-link" href="../index.html">View my first page <span>&rarr; Opens the original web page</span></a>
             </article>
 
-            <article>
+            <article data-project-category="coursework">
                 <p class="eyebrow">HOMEWORK 1</p>
                 <h2>My First Web Page</h2>
                 <p>My first web development assignment: an interactive monkey gallery built with HTML, CSS, and JavaScript.</p>
                 <a class="action-link" href="../homework-1/index.html">View Homework 1 <span>&rarr; Opens the first homework page</span></a>
             </article>
 
-            <article>
+            <article data-project-category="coursework">
                 <p class="eyebrow">HOMEWORK 2</p>
                 <h2>Portfolio Foundations</h2>
                 <p>A multi-page portfolio introducing semantic page structure, navigation, and project layouts.</p>
                 <a class="action-link" href="../web%20devlopment%20homework%202/index.html">View Homework 2 <span>&rarr; Opens the second homework page</span></a>
             </article>
 
-            <article>
+            <article data-project-category="coursework">
                 <p class="eyebrow">HOMEWORK 3</p>
                 <h2>Responsive Portfolio</h2>
                 <img class="project-image" src="portfolio-wireframe.jpg" alt="Wireframe sketch showing the Home, Projects, and About/Contact page layouts">
                 <p>A responsive portfolio using Flexbox, Grid, and a shared site navigation.</p>
             </article>
 
-            <article>
+            <article data-project-category="interactive">
                 <p class="eyebrow">INTERACTIVE PROJECT</p>
                 <h2>Monkey Gallery</h2>
                 <p>Explore and rearrange an interactive gallery of monkey characters.</p>
                 <a class="action-link" href="../monkey-gallery/index.html">Open the monkey gallery <span>&rarr; Opens the interactive gallery</span></a>
             </article>
 
-            <article>
+            <article data-project-category="additional">
                 <p class="eyebrow">ADDITIONAL PROJECT</p>
                 <h2>Linda's Care Team Shared Space</h2>
                 <p>A shared space for Linda's care team, with a little planning to make more room for what matters.</p>
@@ -78,5 +88,6 @@
         <p>&copy; 2026 Brian. Built with To much time on my Hands.</p>
     </footer>
 
+    <script src="projects-filter.js" defer></script>
 </body>
 </html>

@@ -134,6 +134,47 @@ nav a:focus-visible {
     position: relative;
 }
 
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-button {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 2px solid var(--blue);
+    border-radius: 24px;
+    background: var(--bubble);
+    color: var(--espresso);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.filter-button[aria-pressed="true"] {
+    background: var(--blue);
+    color: var(--bubble);
+}
+
+.filter-button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.filter-status {
+    margin: 0;
+    color: var(--body-text);
+}
+
 .project-image {
     display: block;
     width: 100%;

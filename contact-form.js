@@ -28,11 +28,27 @@ if (form) {
         return !message;
     }
 
+    function updateErrorSummary() {
+        if (errorSummary.hidden) {
+            return;
+        }
+
+        const invalidCount = fields.filter((field) => !validateField(field)).length;
+        if (invalidCount === 0) {
+            errorSummary.textContent = "";
+            errorSummary.hidden = true;
+            return;
+        }
+
+        errorSummary.textContent = `Please correct ${invalidCount === 1 ? "the highlighted field" : "the highlighted fields"} before continuing.`;
+    }
+
     fields.forEach((field) => {
         field.addEventListener("blur", () => validateField(field));
         field.addEventListener("input", () => {
             if (field.getAttribute("aria-invalid") === "true") {
                 validateField(field);
+                updateErrorSummary();
             }
         });
     });
