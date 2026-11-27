@@ -75,18 +75,18 @@
             <section class="content-card news-card wide-card" aria-labelledby="local-news-title" aria-busy="false">
                 <p class="eyebrow">LOCAL NEWS</p>
                 <h2 id="local-news-title">News near you</h2>
-                <p id="local-news-help">Enter a city to find recent English-language headlines mentioning that area. Your search is sent to GDELT.</p>
+                <p id="local-news-help">Enter a city to create a Google News search for local headlines.</p>
                 <form class="news-form" id="local-news-form">
                     <div class="news-field">
                         <label for="news-city">City</label>
                         <input id="news-city" name="city" type="search" maxlength="80" autocomplete="address-level2" placeholder="For example, Boston" aria-describedby="local-news-help" required>
                     </div>
-                    <button class="weather-button" type="submit">Find local news</button>
+                    <button class="weather-button" type="submit">Create Google News link</button>
                 </form>
-                <p class="news-status" id="news-status" role="status" aria-live="polite">Enter a city to see recent headlines.</p>
-                <p class="news-fallback" id="news-fallback" hidden></p>
-                <ul class="news-results" id="news-results" aria-label="Local news headlines"></ul>
-                <p class="news-attribution">Headlines indexed by <a href="https://www.gdeltproject.org/">GDELT</a>; links open the original publishers.</p>
+                <p class="news-status" id="news-status" role="status" aria-live="polite">Enter a city to create your local news link.</p>
+                <p class="news-link-container" id="news-link-container" hidden>
+                    <a id="local-news-link" target="_blank" rel="noopener noreferrer"></a>
+                </p>
             </section>
         </div>
     </main>
