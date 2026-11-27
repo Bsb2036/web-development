@@ -99,9 +99,14 @@ async function loadLocalNews(event) {
         timespan: "7d",
         sort: "DateDesc",
     });
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 15000);
 
     try {
-        const response = await fetch(`https://api.gdeltproject.org/api/v2/doc/doc?${query}`);
+        const response = await fetch(
+            `https://api.gdeltproject.org/api/v2/doc/doc?${query}`,
+            { signal: controller.signal },
+        );
         if (!response.ok) {
             throw new Error(`News service returned ${response.status}`);
         }
@@ -128,6 +133,7 @@ async function loadLocalNews(event) {
         newsStatus.textContent = "Local news could not be loaded right now. Please try again later.";
         showNewsFallback(city);
     } finally {
+        window.clearTimeout(timeoutId);
         newsButton.disabled = false;
         newsCard.setAttribute("aria-busy", "false");
     }
