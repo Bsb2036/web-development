@@ -44,6 +44,33 @@
                 <h3>Back in school</h3>
                 <p>Returned to school and not screwing up to badly I Hope</p>
             </section>
+
+            <section class="content-card weather-card wide-card" aria-labelledby="local-weather-title" aria-busy="false">
+                <p class="eyebrow">LOCAL WEATHER</p>
+                <h2 id="local-weather-title">Weather near you</h2>
+                <p>Check current conditions using your device location. When you select the button, your location is sent to Open-Meteo to get the forecast.</p>
+                <button class="weather-button" id="weather-button" type="button">Get local weather</button>
+                <p class="weather-status" id="weather-status" role="status" aria-live="polite">Select the button to check your local forecast.</p>
+                <p class="weather-attribution">Weather data by <a href="https://open-meteo.com/">Open-Meteo</a>.</p>
+                <dl class="weather-details" id="weather-details" hidden>
+                    <div>
+                        <dt>Conditions</dt>
+                        <dd id="weather-condition"></dd>
+                    </div>
+                    <div>
+                        <dt>Temperature</dt>
+                        <dd id="weather-temperature"></dd>
+                    </div>
+                    <div>
+                        <dt>Feels like</dt>
+                        <dd id="weather-apparent"></dd>
+                    </div>
+                    <div>
+                        <dt>Wind</dt>
+                        <dd id="weather-wind"></dd>
+                    </div>
+                </dl>
+            </section>
         </div>
     </main>
 
@@ -52,5 +79,6 @@
     </footer>
 
     <script src="main-page-audio.js" defer></script>
+    <script src="local-weather.js" defer></script>
 </body>
 </html>

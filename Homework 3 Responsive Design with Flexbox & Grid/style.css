@@ -262,6 +262,84 @@ p {
     font-size: 14px;
 }
 
+.weather-card h2 {
+    margin-top: 0;
+}
+
+.weather-button {
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 2px solid var(--blue);
+    border-radius: 24px;
+    background: var(--blue);
+    color: var(--bubble);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.weather-button:hover {
+    background: var(--blue-dark);
+}
+
+.weather-button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.weather-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.weather-status {
+    min-height: 1.65em;
+    margin: 12px 0;
+    color: var(--body-text);
+}
+
+.weather-attribution {
+    margin: 0;
+    color: var(--body-text);
+    font-size: 14px;
+}
+
+.weather-attribution a {
+    color: var(--blue-dark);
+    font-weight: 700;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 16px 0 0;
+}
+
+.weather-details[hidden] {
+    display: none;
+}
+
+.weather-details div {
+    padding: 12px;
+    border: 1px solid var(--cardboard-light);
+    border-radius: 12px;
+    background: #ffffff80;
+}
+
+.weather-details dt {
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.weather-details dd {
+    margin: 4px 0 0;
+    color: var(--espresso);
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .action-link {
     display: inline-block;
     max-width: 100%;
